@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/jobposting', [JobPostingController::class, 'DisplayJob']);
+//Route::get('/', function () {return view('welcome');});
+Route::get('/', [JobPostingController::class, 'DisplayJob']);
 Route::post('/jobs/apply', [JobPostingController::class, 'store'])->name('jobs.apply');
